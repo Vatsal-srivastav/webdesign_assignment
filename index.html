@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f6f5f0" />
+    <meta name="description" content="Find your people and your next favorite thing with Common Ground, a guide to thoughtful gatherings in the city." />
+    <title>Common Ground — Find your people</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href="#top" aria-label="Common Ground home">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span>common<span class="wordmark-light">ground</span></span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#events">Find an event</a>
+        <a href="#about">Our point of view</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-button theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch color theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.5"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.1A8.5 8.5 0 0 1 8.9 3.8 8.5 8.5 0 1 0 20.2 15.1Z"/></svg>
+        </button>
+        <a class="button button-dark header-cta" href="#events">Explore events <span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="live-dot"></span> GOOD THINGS HAPPEN TOGETHER</div>
+          <h1 id="hero-title">Make room<br />for <em>something</em><br />good.</h1>
+          <p class="hero-description">A little nudge out the door. Find thoughtful gatherings, new favorite places, and people you haven't met yet.</p>
+          <a class="button button-coral hero-cta" href="#events">Find your next thing <span aria-hidden="true">↘</span></a>
+          <div class="hero-footnote"><span class="avatar-stack" aria-hidden="true"><i>M</i><i>A</i><i>J</i><i>+</i></span><span>Good company, close by.</span></div>
+        </div>
+        <div class="hero-art" aria-label="People gathered around a table at an outdoor dinner">
+          <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1400&q=85" alt="Friends share a long outdoor dinner under string lights" />
+          <div class="hero-image-wash"></div>
+          <div class="hero-note"><span class="note-star" aria-hidden="true">✳</span><span>Less scrolling.<br /><strong>More living.</strong></span></div>
+          <div class="next-event-tag"><span class="tag-label">UP NEXT IN THE CITY</span><span class="tag-title" data-next-event>The long table supper</span><span class="tag-date"><span class="live-dot"></span><span data-countdown>Loading countdown</span></span></div>
+          <span class="hero-index" aria-hidden="true">01 — 06</span>
+        </div>
+        <div class="hero-side-label" aria-hidden="true">A CITY GUIDE FOR THE CURIOUS</div>
+      </section>
+
+      <section class="events-section" id="events" aria-labelledby="events-title">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow section-eyebrow"><span class="eyebrow-line"></span> YOUR CALENDAR, SORTED</div>
+            <h2 id="events-title">A good place<br class="mobile-break" /> to <em>start.</em></h2>
+          </div>
+          <p class="section-intro">Small rooms, big ideas, no velvet ropes.<br />Just good events and even better people.</p>
+        </div>
+        <div class="event-tools">
+          <div class="filter-list" role="group" aria-label="Filter events by category">
+            <button class="filter-chip is-active" type="button" data-category="all" aria-pressed="true">Everything <span data-count="all">06</span></button>
+            <button class="filter-chip" type="button" data-category="culture" aria-pressed="false">Culture</button>
+            <button class="filter-chip" type="button" data-category="food" aria-pressed="false">Food & drink</button>
+            <button class="filter-chip" type="button" data-category="music" aria-pressed="false">Music</button>
+            <button class="filter-chip" type="button" data-category="wellbeing" aria-pressed="false">Wellbeing</button>
+          </div>
+          <label class="search-box">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg>
+            <input id="event-search" type="search" placeholder="Find your thing" autocomplete="off" />
+            <span class="search-shortcut" aria-hidden="true">⌕</span>
+          </label>
+        </div>
+        <div class="result-line"><span><span class="live-dot"></span> CURATED FOR THE CITY</span><span id="result-count" aria-live="polite">06 EVENTS TO LOOK FORWARD TO</span></div>
+        <div class="event-grid" id="event-grid" aria-live="polite"></div>
+        <div class="empty-state" id="empty-state" hidden>
+          <span aria-hidden="true">◌</span><h3>No plans found. Yet.</h3><p>Try a different search or category. Your next good thing is out there.</p>
+          <button type="button" class="text-button clear-filters">Clear filters <span aria-hidden="true">↗</span></button>
+        </div>
+        <div class="browse-footer"><span>GOOD PLANS, GOOD PEOPLE, NO ALGORITHM.</span><button type="button" class="text-button clear-filters">Reset filters <span aria-hidden="true">↗</span></button></div>
+      </section>
+
+      <section class="manifesto" id="about">
+        <div class="manifesto-symbol" aria-hidden="true">✳</div>
+        <div class="manifesto-copy"><span class="eyebrow">A SMALL THOUGHT</span><h2>The best stuff<br />happens <em>in person.</em></h2></div>
+        <div class="manifesto-note"><p>We think a city gets better when we show up for it. So we find the good gatherings and bring them a little closer.</p><a class="text-button" href="#events">Come on out <span aria-hidden="true">↗</span></a></div>
+        <span class="manifesto-side" aria-hidden="true">EST. FOR THE HERE & NOW</span>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="wordmark footer-wordmark" href="#top"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>common<span class="wordmark-light">ground</span></span></a>
+      <span class="footer-note">A little more life, together.</span>
+      <a class="footer-top" href="#top">BACK TO THE TOP <span aria-hidden="true">↑</span></a>
+      <span class="copyright">© 2026 COMMON GROUND</span>
+    </footer>
+
+    <dialog class="event-dialog" id="event-dialog" aria-labelledby="dialog-title">
+      <button class="dialog-close icon-button" type="button" aria-label="Close event details" data-close-dialog>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+      </button>
+      <div class="dialog-layout">
+        <div class="dialog-visual"><img id="dialog-image" src="" alt="" /><span class="dialog-category" id="dialog-category"></span></div>
+        <div class="dialog-content">
+          <span class="eyebrow">A GOOD THING IS HAPPENING</span>
+          <h2 id="dialog-title"></h2>
+          <p class="dialog-description" id="dialog-description"></p>
+          <div class="event-facts"><div><span class="fact-label">WHEN</span><span id="dialog-date"></span></div><div><span class="fact-label">WHERE</span><span id="dialog-venue"></span></div><div><span class="fact-label">TICKETS</span><span id="dialog-price"></span></div></div>
+          <div class="signup-heading"><span class="eyebrow">SAVE YOUR SPOT</span><span class="signup-asterisk" aria-hidden="true">✳</span></div>
+          <form id="registration-form" novalidate>
+            <input type="hidden" id="selected-event" name="event" />
+            <div class="form-row"><label for="participant-name">Your name</label><input id="participant-name" name="name" type="text" placeholder="How should we call you?" autocomplete="name" aria-describedby="participant-name-error" required minlength="2" /><small class="field-error" id="participant-name-error" data-error-for="participant-name"></small></div>
+            <div class="form-row"><label for="participant-email">Email address</label><input id="participant-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" aria-describedby="participant-email-error" required /><small class="field-error" id="participant-email-error" data-error-for="participant-email"></small></div>
+            <div class="form-row"><label for="participant-phone">Phone number</label><input id="participant-phone" name="phone" type="tel" placeholder="(555) 012-3456" autocomplete="tel" aria-describedby="participant-phone-error" required /><small class="field-error" id="participant-phone-error" data-error-for="participant-phone"></small></div>
+            <button class="button button-coral submit-button" type="submit">Count me in <span aria-hidden="true">↗</span></button>
+            <p class="field-error" id="registration-storage-error" role="alert" hidden>We couldn't save your registration in this browser. Check storage settings and try again.</p>
+            <p class="form-privacy">Your details stay with us. No noise, just the good stuff.</p>
+          </form>
+          <div class="success-message" id="success-message" role="status" hidden><span class="success-mark" aria-hidden="true">✓</span><h3>You're on the list.</h3><p>Keep an eye on your inbox. The good stuff is getting closer.</p><button class="text-button" type="button" data-close-dialog>Back to the events <span aria-hidden="true">↗</span></button></div>
+        </div>
+      </div>
+    </dialog>
+  </body>
+</html>
